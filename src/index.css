@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #031420;
+    color: #e6eff6;
+  }
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom sleek dark GIS scrollbar */
+.gis-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.gis-scroll::-webkit-scrollbar-track {
+  background: #041928;
+}
+
+.gis-scroll::-webkit-scrollbar-thumb {
+  background: #17435e;
+  border-radius: 3px;
+}
+
+.gis-scroll::-webkit-scrollbar-thumb:hover {
+  background: #235c7f;
+}
+
+@keyframes crawl-ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-crawl {
+  display: flex;
+  width: max-content;
+  animation: crawl-ticker 38s linear infinite;
+}
+
+.crawl-container:hover .animate-crawl {
+  animation-play-state: paused;
+}
+
+@keyframes incident-blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.18);
+  }
+}
+
+.animate-incident-blink {
+  animation: incident-blink 0.95s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes incident-ring {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+.animate-incident-ring {
+  animation: incident-ring 1.3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-crawl {
+    animation: none;
+  }
+  .animate-incident-blink,
+  .animate-incident-ring {
+    animation: none;
+  }
+}

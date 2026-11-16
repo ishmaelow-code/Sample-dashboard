@@ -1,0 +1,8 @@
+{
+  "name": "Remix Ayawaso East By-Election 2026 Operations Dashboard",
+  "description": "Interactive GIS operations dashboard monitoring 113 polling stations across 11 electoral areas in the Ayawaso East Constituency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
